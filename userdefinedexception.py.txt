@@ -1,0 +1,33 @@
+#****************The bad approach
+'''print("user defined exception")
+balance=3000
+def withdraw(amount):
+    amount=int(input("enter amount to be withdrawn: "))
+    if(amount>=balance):
+        raise("Insufficient Funds, Broke ass!")
+    else:
+        print("Transaction successful")
+withdraw(int)
+'''
+
+#****************BEST PRACTICE BELOW***************
+class Transaction(Exception):
+    def __init__(self,message):
+        self.message=message
+class Withdraw(Exception):
+    def __init__(self,message):
+        self.message=message
+amount=int(input("Enter withdrawal amount please: "))
+           
+try:
+    if (amount>=3000):
+        raise Transaction("Insufficient funds")
+except Transaction:
+    print("************Insufficient funds***************")
+else:
+    if(amount<=3000 or amount==3000):
+        print("Baby I got yo money!")
+finally:
+    print("*******Transaction Complete!********")
+
+class 

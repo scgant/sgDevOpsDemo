@@ -1,0 +1,309 @@
+import re
+'''pattern=re.compile('anyname')
+print(type(pattern))
+
+pattern2=re.compile('ab')
+#string that we need to search
+matcher=pattern2.finditer('abaababa')
+for match in matcher:
+    print("Match is available at start index",match.start())
+    print("Match is available at end index",match.end())
+    print("Match is available at group index",match.group())
+    print('*'*30)
+
+pattern1=re.compile('cc')
+#string that we need to search
+matcher=pattern1.finditer('abaababa')
+for match in matcher:
+    print("Match is available at start index",match.start())
+    print("Match is available at end index",match.end())
+    print("Match is available at group index",match.group())
+    print('*'*30)
+
+
+pattern3=re.compile('aa')
+#string that we need to search
+matcher=pattern3.finditer('abaababa')
+for match in matcher:
+    print("Match is available at start index",match.start())
+    print("Match is available at end index",match.end())
+    print("Match is available at group index",match.group())
+    print('*'*30)
+
+pattern4=re.compile('ba')
+#string that we need to search
+matcher=pattern4.finditer('abaababa')
+for match in matcher:
+    print("Match is available at start index",match.start())
+    print("Match is available at end index",match.end())
+    print("Match is available at group index",match.group())
+    print('*'*30)
+
+count=0
+patterncount=re.compile('xy')
+matchers=patterncount.finditer('xxyxyyxxzxzz')
+for match in matchers:
+    count=count+1
+    print("Match is available at start index",match.start())
+    print("Match is available at end index",match.end())
+    print("Match is available at group index",match.group())
+    print('*'*30)
+print("number of count of match found: ",count)
+'''
+'''
+patterncount1=re.compile('xxy')
+matchers=patterncount1.finditer('xxyxyyxxzxzz')
+for match in matchers:
+    count=count+1
+    print("Match is available at start index",match.start())
+    print("Match is available at end index",match.end())
+    print("Match is available at group index",match.group())
+    print('*'*30)
+print("number of count of match found: ",count)'''
+'''
+count=0
+matchers=re.finditer('ab','abaababa')
+for i in matchers:
+    count=count+1
+    print("Start index:{},End-Index:{},Group match:{}".format(i.start(),i.end(),i.group()))
+    print("number of group found is: ",count)
+'''
+
+'''matchers=re.finditer('\s','a7&hkjf 9b3558fc&%h')
+for s in matchers:
+    print(s.start(),'........' ,s.end(),'.........',s.group())
+    print("this is space character")
+print("*"*60)
+
+matchers=re.finditer('\S','a7&hkj f9b 3558f c&%h')
+for a in matchers:
+    print(a.start(),'........' ,a.end(),'.........',a.group())
+    print("this is the except space character")
+    print("%"*60)
+
+matchers=re.finditer('\d','a7&hkjf9b3558fc&%h')
+for b in matchers:
+    print(b.start(),'........' ,b.end(),'.........',b.group())
+    print("This is any digit")    
+print("$"*60)
+matchers=re.finditer('\D','a7&hkjf9')
+for c in matchers:
+    print(c.start(),'........' ,c.end(),'.........',c.group())
+    print("This is except digit")
+print("#"*60)
+matchers=re.finditer('\w','a7&hkjf9GU&(#4VBJb3558fc&%h')
+for d in matchers:
+    print(d.start(),'........' ,d.end(),'.........',d.group())
+    print("this is any word character")
+print("@"*60)
+matchers=re.finditer('[\W]','[a7&hkjf9b3558fc&%h')
+for e in matchers:
+    print(e.start(),'........' ,e.end(),'.........',e.group())
+    print("this is any character except word")
+print("*"*60)
+matchers=re.finditer('[9]','[a7&hkjf9b3558fc&%h')
+for q in matchers:
+    print(q.start(),'........' ,q.end(),'.........',q.group())
+
+matchers=input("Enter a string: ")
+counter=re.finditer(matchers,'ab')
+for count in counter:
+    print("start-index: {},end-index:{},group:{}".format(count.start(),count.end(),count.group()))
+'''
+'''
+matchers=re.finditer('a','abaababa')
+for m in matchers:
+    print(m.start(),'......',m.end(),'........',m.group())
+print("exactly one match")
+matchers=re.finditer('a+','abaababa')
+for m in matchers:
+    print(m.start(),'......',m.end(),'........',m.group())
+print("exactly one match")
+matchers=re.finditer('a*','abaababa')
+for m in matchers:
+    print(m.start(),'......',m.end(),'........',m.group())
+print("exactly one match")
+matchers=re.finditer('a?','abaababa')
+for m in matchers:
+    print(m.start(),'......',m.end(),'........',m.group())
+print("exactly one match")
+
+print("Quantity Regular Expression")
+matchers=re.finditer('a{?}','abaabaaaa')
+for w in matchers:
+    print("Start-Index:{},End-Index:{},group-Index:{}".format(w.start(),w.end(),w.group()))
+'''
+print("*"*60)
+#===========================Match======================================
+'''match=re.finditer('^','abaabaaaa')
+for w in match:
+    print("Start-Index:{},End-Index:{},group-Index:{}".format(w.start(),w.end(),w.group()))    
+
+search=input("enter pattern to check: ")
+match=re.match(search,'abcdefghi')
+print("*"*60)
+if (match!=None):
+    print("match is available at beginning of string")
+    print("Start-Index:{},End-Index:{}".format(match.start(),match.end()))
+else:
+    print("Match not available at the beginning of the string")
+
+match=re.finditer('^','abaabaaaa')
+for w in match:
+    print("Start-Index:{},End-Index:{},group-Index:{}".format(w.start(),w.end(),w.group()))    
+
+search=input("enter pattern to check: ")
+match=re.fullmatch(search,'abc')
+print("*"*60)
+if (match!=None):
+    print("full string match is available at beginning of string")
+    print("Start-Index:{},End-Index:{}".format(match.start(),match.end()))
+else:
+    print("full string Match not available at the beginning of the string")
+'''
+'''
+#=========================findall===========================
+print("this is the FINDALL method")
+print("*"*60)
+var=re.findall('\s',"a7# AsfjR&$9")
+print("space character found ",var)
+
+print("this is the FINDALL method")
+print("*"*60)
+var2=re.findall('\S',"a7# AsfjR&$9")
+print("space character found ",var2)
+
+print("this is the FINDALL method")
+print("*"*60)
+var3=re.findall('\w',"a7# AsfjR&$9")
+print("word character found ",var3)
+
+print("this is the FINDALL method")
+print("*"*60)
+var4=re.findall('\W',"a7# AsfjR&$9")
+print("except character found ",var4)
+
+print("this is the FINDALL method")
+print("*"*60)
+var5=re.findall('\d',"a7# AsfjR&$9")
+print("digits character found ",var5)
+
+print("this is the FINDALL method")
+print("*"*60)
+var6=re.findall('\D',"a7# AsfjR&$9")
+print("except digits character found ",var6)
+
+print("this is the FINDALL method")
+print("*"*60)
+var7=re.findall('.',"a7# AsfjR&$9")
+print("all character found ",var7)
+'''
+
+#===========================sub method=========================
+#target string 'a7b9k5t9k87hjkl
+'''
+search=re.sub('\d','#','a7b9k5t9k87hjkl')
+print("$"*30)
+print(search)
+
+
+mad=re.sub('\d','steve','a7b9k5t9k87hjkl')
+print("&"*30)
+print(mad)
+
+hero=re.sub('\d',' ','a7b9k5t9k87hjkl')
+print("$"*30)
+print(hero)
+
+search2=re.sub('\w','#','a7b9k5t9k87hjkl')
+print("$"*30)
+print(search2)
+
+
+mad2=re.sub('\W','steve','a7b9k5t9k87hjkl')
+print("&"*30)
+print(mad2)
+
+hero2=re.sub('.',' ','a7b9k5t9k87hjkl')
+print("$"*30)
+print(hero2)'''
+
+#===================subn method===============================
+'''print("this is subn method")
+#syntax:
+#var=re.subn('regex notation', 'substitution','targetstring')
+search11=re.subn('\d','#','a7b9k5t9k87hjkl')
+print("the type of result is: ",type(search11))
+print("The resulting string is: ",search11[0])
+print("The number of replacements are: ",search11[1])
+
+print("this is subn method")
+print("%"*50)
+#syntax:
+#var=re.subn('regex notation', 'substitution','targetstring')
+search111=re.subn('\d','X','a7b9k5t9k87hjkl')
+
+print("the type of result is: ",type(search111))
+print("The resulting string is: ",search111[0])
+print("The number of replacements are: ",search111[1])
+'''
+#========================split method======================
+'''
+print("given string is 11-22-33-44-55-66")
+ex=re.split('-','11-22-33-44-55-66')
+print("output is: ",ex)'''
+'''
+print("%"*50)
+print("this is a search method")
+m="Learning regular expression is easy in python"
+result=re.search("^learning",m)
+if(result!=None):
+    print("target string starts with word 'Learning' ")
+else:
+    print("target string does not start with 'Learning' ")
+
+print("%"*50)
+print("this is a search method")
+n="Learning regular expression is easy in python"
+result=re.search("^tr",n)
+if(result!=None):
+    print("target string starts with word 'Learning' ")
+else:
+    print("target string does not start with 'Learning' ")
+
+print("%"*50)
+print("this is a search method")
+nm="Learning regular expression is easy in python"
+result=re.search("Python$",nm)
+if(result!=None):
+    print("target string end with word 'python' ")
+else:
+    print("target string does not end with 'python' ")
+
+
+print("%"*50)
+print("this is a search method")
+nme="Learning regular expression is easy in python"
+result=re.search("Python$",nme,re.IGNORECASE)
+if(result!=None):
+    print("target string end with word 'python' ")
+else:
+    print("target string does not end with 'python' ")
+'''
+#--------------------------solve question--------------
+#password validation
+#must be lowercase, have digits and a minimum length of 2
+'''
+hulk=input("enter password to validate: ")
+match=re.fullmatch('[a-z][0-9][a-z0-9#]*',hulk)
+if match!=None:
+    print("valid password", hulk)
+else:
+    print(hulk," is not a valid password...try again")
+'''
+thor=input("enter number to validate: ")
+match=re.fullmatch('[6-9]\d{9}',thor)
+if match!=None:
+    print("valid number", thor)
+else:
+    print(thor," is not a valid number...try again")
